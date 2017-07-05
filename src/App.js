@@ -21,8 +21,9 @@ class App extends React.Component {
   state = { events };
 
   updateCell = (e) => {
-    var event = Object.assign({}, this.state.events[e.title], { [e.name]: e.value });
-    this.state.events[e.title] = event;
+    console.log(e)
+    var event = Object.assign({}, this.state.events[e.xxx], { [e.name]: e.value });
+    this.state.events[e.xxx] = event;
     this.setState({ events });
   }
   makeForm = (events) => {this.setState({ events })}
@@ -30,7 +31,7 @@ class App extends React.Component {
     return ( 
       <div className = 'container'>
         <List 
-          updateCell = {this.updateCell.bind(this)} 
+          updateCell = { this.updateCell.bind(this) } 
           makeForm = { this.makeForm.bind(this) } 
           events = { this.state.events }
         /> 

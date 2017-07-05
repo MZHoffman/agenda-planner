@@ -5,7 +5,7 @@ class InlineForm extends React.Component{
       events: this.props.events,
       value: this.props.value,
       name: this.props.name,
-      title: this.props.title,
+      xxx: this.props.xxx,
     }
   componentWillReceiveProps(nextProps) {
     this.setState({ events: nextProps.events });
@@ -21,10 +21,13 @@ class InlineForm extends React.Component{
       this.props.updateCell(this.state);
     }
   }
+  handleonBlur = () => { 
+    this.props.updateCell(this.state);
+  };
   render(){
     return(
       <form onSubmit={this.handleSubmit} onKeyUp={this.handleonKeyUp}>
-        <input type="text" name={this.state.name} value={this.state.value} onChange={this.handleChange}/>
+        <input type="text" onBlur={this.handleonBlur} name={this.state.name} value={this.state.value} onChange={this.handleChange}/>
       </form>
     )
   }

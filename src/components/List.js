@@ -6,7 +6,14 @@ class List extends React.Component {
       events: this.props.events
     };
   handleClick = (e) => {
-    var event = Object.assign({}, this.state.events[e.target.id], {[e.target.title]:  <InlineForm updateCell={this.props.updateCell} name={e.target.title} value={e.target.innerText} title={e.target.id} events={this.state.events}/>});
+    var event = Object.assign({}, this.state.events[e.target.id], 
+      {[e.target.title]:  <InlineForm 
+                            updateCell={this.props.updateCell} 
+                            name={e.target.title} 
+                            value={e.target.innerText} 
+                            xxx={e.target.id} 
+                            events={this.state.events}/>
+      });
     var events = this.state.events
     events[e.target.id] = event;
     this.props.makeForm(events);
