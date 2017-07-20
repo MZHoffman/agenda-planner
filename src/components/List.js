@@ -21,7 +21,8 @@ class List extends React.Component {
   render() {
     return (
       <div>
-        <table><tbody>
+        <table>
+        <tr><td>ID</td><td>Start</td><td>Duration</td><td>End</td><td>Name</td></tr><tbody>
         {this.props.events.map((ev) => {
            return(
              <tr key={ev.position}>
