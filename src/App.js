@@ -1,7 +1,6 @@
 var React = require('react');
 var List = require('./components/List');
 
-
 var events = [
   {
     position: 1,
@@ -27,6 +26,9 @@ class App extends React.Component {
     this.state.events[e.xxx] = event;
     this.setState({ events });
   }
+  addRow = (events) => {
+    this.setState({ events });
+  }
   makeForm = (events) => {this.setState({ events })}
   render() {
     return ( 
@@ -35,6 +37,7 @@ class App extends React.Component {
           updateCell = { this.updateCell.bind(this) } 
           makeForm = { this.makeForm.bind(this) } 
           events = { this.state.events }
+          addRow = { this.addRow.bind(this) } 
         /> 
       </div>
     )

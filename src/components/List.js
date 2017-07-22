@@ -1,5 +1,6 @@
 var React = require('react');
-var InlineForm   = require('./InlineForm');
+var InlineForm = require('./InlineForm');
+var AddEvent = require('./AddEvent');
 
 class List extends React.Component {
     state = {
@@ -35,6 +36,7 @@ class List extends React.Component {
            ) 
         })}
         </tbody></table>
+        <AddEvent events = { this.state.events } addRow={this.props.addRow} />
       </div>
     )
   }
