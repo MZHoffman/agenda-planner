@@ -34,10 +34,10 @@ class App extends React.Component {
     return ( 
       <div className = 'container'>
         <List 
-          updateCell = { this.updateCell.bind(this) } 
-          makeForm = { this.makeForm.bind(this) } 
+          updateCell = { this.updateCell } 
+          makeForm = { this.makeForm } 
           events = { this.state.events }
-          addRow = { this.addRow.bind(this) } 
+          addRow = { this.addRow } 
         /> 
       </div>
     )
